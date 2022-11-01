@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@amcharts/amcharts4": "^4.10.29",
+    "@amcharts/amcharts4-fonts": "^4.0.1",
+    "@amcharts/amcharts4-geodata": "^4.1.26"
+  }
+}
