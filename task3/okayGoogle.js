@@ -1,3 +1,5 @@
+document.cookie = "AC-C=ac-c;expires=Fri, 31 Dec 9999 23:59:59 GMT;path=/;SameSite=Lax";
+
 var langs =
 [['Afrikaans',       ['af-ZA']],
  ['Bahasa Indonesia',['id-ID']],
@@ -153,17 +155,11 @@ if (!('webkitSpeechRecognition' in window)) {
     for (var i = event.resultIndex; i < event.results.length; ++i) {
       if (event.results[i].isFinal) {
         final_transcript += event.results[i][0].transcript;
+        
         if (okayGoogleStatus) {
-            console.log("okayGoogleStatus1");
-            window.onload = function() {
-                var search;
-                console.log("okayGoogleStatus2");
-                search = google.search.cse.element.getElement('gcseSearch');
-                console.log("okayGoogleStatus3");
-                search.execute(final_transcript);
-                console.log("okayGoogleStatus4");
-                console.log(search);
-            }
+            var search;
+            search = google.search.cse.element.getElement('gcseSearch');
+            search.execute(final_transcript);
         }else{
             checkokayGoogle(final_transcript);
             final_transcript = "";
@@ -249,7 +245,7 @@ function startButton(event) {
   ignore_onend = false;
   final_span.innerHTML = '';
   interim_span.innerHTML = '';
-  start_img.src = 'mic-slash.gif';
+//   start_img.src = 'misc-slash.gif';
   showInfo('info_allow');
   showButtons('none');
   start_timestamp = event.timeStamp;
